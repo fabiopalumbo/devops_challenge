@@ -25,3 +25,10 @@ jobs:
       - name: "Run unit tests"
         run: |
           echo "Running unit tests"
+                 name: Build and push
+      - name: "Docker build"                 
+        uses: docker/build-push-action@v3
+        with:
+          context: ./nginx/
+          push: false
+          tags: user/app:latest 
